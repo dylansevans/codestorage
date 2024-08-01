@@ -1,0 +1,20 @@
+def main(n):
+    if n % 1 != 0 or n <= 0:
+        return f"{n} is not a valid number"
+    
+    mod = n
+    count = 3
+    
+    while mod % 2 == 0:
+        mod /= 2
+
+    while mod > 1:
+        if mod % count == 0:
+            mod /= count
+        else:
+            count += 2
+
+    return count
+
+if __name__ == "__main__":
+    print(main(600851475143))
